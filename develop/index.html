@@ -8,8 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="start"> Start Quiz! </div>
+    <div id="quiz" style = "display : none;">
+        <div id="question"><p> Question</p></div>
+            <div id="timer"></div>
+            <div id="counter"> 10 </div>
+            <div id="btimeGauge"></div>
+            <div id="timeGauge"></div>
+    </div>
+    <div id="choices">
+        <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
+        <div class="choice" id="B" onclick="checkAnswer('A')">B</div>
+        <div class="choice" id="C" onclick="checkAnswer('A')">C</div>
+        <div class="choice" id="D" onclick="checkAnswer('A')">D</div>
+    </div>   
+    <div id="progress"> <div class="prog"></div>
+    </div>
+    <div id="scoreContainer" style = "display: none;" >
+    </div>
 
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
