@@ -3,8 +3,14 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const timerElement = document.getElementById('timer')
+const SCORE_POINTS = 100
+const MAX_QUESTIONS = 5
 
 let shuffledQuestions, currentQuestionIndex
+let score = 0
+let secondsLeft = 10;
+
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -13,10 +19,11 @@ nextButton.addEventListener('click', () => {
 })
 
 function startGame() {
-    console.log('Started')
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() -.6)
     currentQuestionIndex = 0
+    score = 0
+    secondsLeft = 10
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
@@ -56,11 +63,9 @@ function selectAnswer(e) {
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
-    } else {
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
-    }
+    } then 
 }
+
         
 function setStatusClass(element, correct) {
     clearStatusClass(element)
