@@ -63,7 +63,7 @@ function setTime() {
   }
   function sendMessage() {
     questionContainerElement.textContent = "Your score is " + score;
-  
+    timerElement.textContent = ""
   }
   
   //setTime();
