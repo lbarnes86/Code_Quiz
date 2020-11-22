@@ -1,8 +1,8 @@
-# Homework 3-Password Generator
+# Homework 4 - Code Quiz
 
-- Project Repository: 
+- Project Repository: https://github.com/lbarnes86/codeQuiz
 
-- Project Deployment:  
+- Project Deployment:  https://lbarnes86.github.io/codeQuiz/
 
 
 
