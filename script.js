@@ -1,15 +1,17 @@
+const containerClass = document.getElementsByClassName('container')
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const timerElement = document.getElementById('timer')
+const scoreElement = document.getElementById('score')
 const scorePoints = 100
 const maxQuestions = 5
 
 let shuffledQuestions, currentQuestionIndex
 let score = 0
-let secondsLeft = 10;
+let secondsLeft = 40;
 
 
 startButton.addEventListener('click', startGame)
@@ -24,7 +26,7 @@ function startGame() {
     shuffledQuestions = questions.sort(() => Math.random() -.6)
     currentQuestionIndex = 0
     score = 0
-    secondsLeft = 10
+    secondsLeft = 40
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
@@ -62,10 +64,8 @@ function setTime() {
   function sendMessage() {
     timerElement.textContent = " ";
   
-    let score = document.createElement("img");
-  
-    imgEl.setAttribute("src", "images/image_1.jpg");
-    mainEl.appendChild(imgEl);
+    
+    containerClass.appendChild(score);
   
   }
   
