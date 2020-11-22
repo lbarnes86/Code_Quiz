@@ -11,7 +11,7 @@ const maxQuestions = 5
 
 let shuffledQuestions, currentQuestionIndex
 let score = 0
-let secondsLeft = 40;
+let secondsLeft = 10;
 
 
 startButton.addEventListener('click', startGame)
@@ -26,7 +26,7 @@ function startGame() {
     shuffledQuestions = questions.sort(() => Math.random() -.6)
     currentQuestionIndex = 0
     score = 0
-    secondsLeft = 40
+    secondsLeft = 10
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
@@ -62,10 +62,7 @@ function setTime() {
     }, 1000);
   }
   function sendMessage() {
-    timerElement.textContent = " ";
-  
-    
-    containerClass.appendChild(score);
+    questionContainerElement.textContent = "Your score is " + score;
   
   }
   
@@ -87,7 +84,7 @@ function selectAnswer(e) {
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
-    } then 
+    }
 }
 
         
