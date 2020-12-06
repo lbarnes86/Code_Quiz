@@ -1,4 +1,5 @@
-# Homework 4 - Code Quiz
+
+# Code Quiz
 
 - Project Repository: https://github.com/lbarnes86/codeQuiz
 
