@@ -1,150 +1,191 @@
-const containerClass = document.getElementsByClassName('container')
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
-const timerElement = document.getElementById('timer')
-const scoreElement = document.getElementById('score')
-const scorePoints = 100
-const maxQuestions = 5
+let welcomeId = document.querySelector("#welcomeId");
+let quizId = document.querySelector("#quizId");
+let endQuiz = document.querySelector("#endQuiz");
+let resultId = document.querySelector("#resultId");
 
-let shuffledQuestions, currentQuestionIndex
-let score = 0
-let secondsLeft = 10;
+let startQuizBtn = document.querySelector("#startQuizBtn");
+let finalScore = document.querySelector("#finalScore");
+
+let userNameInput = document.querySelector("#userName-text");
+let userNameForm = document.querySelector("#userName-form");
+let submituserNames = document.querySelector("#submituserNames");
+let userNameCountSpan = document.querySelector("#userName-count");
+let userNameList = document.querySelector("#userName-list");
+let correct = document.querySelector("#correct");
+let wrong = document.querySelector("#wrong");
+
+let question = document.querySelector("#question");
+let answer1 = document.querySelector("#answer1");
+let answer2 = document.querySelector("#answer2");
+let answer3 = document.querySelector("#answer3");
+let answer4 = document.querySelector("#answer4");
+
+let questionArray = [{
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    answers: ["1. JavaScript", "2. Terminal / Bash", "3. for loops", "4. console log"],
+    correctAnswerIndex: "3"
+}, {
+    question: "The condition in an if / esle statement is enclosed within _____.",
+    answers: ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
+    correctAnswerIndex: "2"
+}, {
+    question: "Arrays in JavaScript can be used to store _____",
+    answers: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
+    correctAnswerIndex: "3"
+}, {
+    question: "String values must be enclosed within _____ when being assigned to variables.",
+    answers: ["1. quotes", "2. curly brackets", "3. commas", "4. parentheses"],
+    correctAnswerIndex: "0"
+}, {
+    question: "Commonly used data types DO NOT include:",
+    answers: ["1. strings", "2. alerts", "3. booleans", "4. numbers"],
+    correctAnswerIndex: "1"
+}]
 
 
-startButton.addEventListener('click', startGame)
-startButton.addEventListener('click', setTime)
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setNextQuestion()
-})
+let i = 0;
+let answerChoice = "";
+let correctAnswer = "";
 
-function startGame() {
-    startButton.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() -.6)
-    currentQuestionIndex = 0
-    score = 0
-    secondsLeft = 10
-    questionContainerElement.classList.remove('hide')
-    setNextQuestion()
+let listOfAnswers = [];
+let userNames = [];
+let highScores = [];
+
+
+let codeTimer = 60;
+let timerFinish = document.querySelector("#counterId").textContent;
+
+init();
+
+function init() {
+ 
+    var storedHighScores = JSON.parse(localStorage.getItem("highScores"));
+
+
+    if (storedHighScores !== null) {
+        highScores = storedHighScores.sort((a, b) => b - a);
+    }
+
 }
 
-function setNextQuestion() {
-    resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+function codeQuiz() {
+
+    let currentQuestion = questionArray[i];
+    question.textContent = currentQuestion.question;
+    answer1.textContent = currentQuestion.answers[0];
+    answer2.textContent = currentQuestion.answers[1];
+    answer3.textContent = currentQuestion.answers[2];
+    answer4.textContent = currentQuestion.answers[3];
+    correctAnswer = currentQuestion.correctAnswerIndex;
+
 }
+
+$(".answer").click(function() {
+    answerChoice = this.value;
+    listOfAnswers.push(answerChoice);
+
     
-function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
+
+
+    if (answerChoice === correctAnswer) {
+        correct.setAttribute("style", "display: inline-block;");
+        wrong.setAttribute("style", "display: none;");
+        resultId.setAttribute("style", "display: inline-block;")
+            // console.log("Correct")
+    }
+    if (answerChoice !== correctAnswer) {
+        codeTimer -= 10;
+        $("#counterId").html('00:' + codeTimer);
+        // console.log("-10 Seconds!")
+        correct.setAttribute("style", "display: none;");
+        wrong.setAttribute("style", "display: inline-block;");
+        // console.log("Wrong")
+    }
+    if (i === 4) {
+        quizId.setAttribute("style", "display: none;");
+        endQuiz.setAttribute("style", "display: block;");
+    }
+    if (i !== 4) {
+        return i = i + 1, codeQuiz();
+    }
+});
+
+function quizTimer() {
+
+    welcomeId.setAttribute("style", "display: none;");
+    quizId.setAttribute("style", "display: inline-block;");
+
+    let timer = setInterval(function() {
+
+        codeTimer--;
+        $("#counterId").html('00:' + codeTimer);
+        if (codeTimer === -1) clearInterval(timer)
+
+        if (codeTimer === -1) {
+
+            quizId.setAttribute("style", "display: none;");
+            endQuiz.setAttribute("style", "display: block;");
         }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
-    })
-}
-function setTime() {
-    let timerInterval = setInterval(function() {
-      secondsLeft--;
-      timerElement.textContent = secondsLeft + " seconds left.";
-  
-      if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        sendMessage();
-      }
-  
+
+        if (listOfAnswers.length === 5) {
+            quizId.setAttribute("style", "display: none;");
+            endQuiz.setAttribute("style", "display: block;");
+            clearInterval(timer)
+            finalScore.textContent = codeTimer;
+
+        }
+
     }, 1000);
-  }
-  function sendMessage() {
-    questionContainerElement.textContent = "Your score is " + score;
-    timerElement.textContent = ""
-  }
+
+};
+
+function storeHighscores() {
+    // Sort highScores in Descending order - most time left is highest score
+    highScores.sort((a, b) => {
+            if (a.score < b.score) {
+                return 1
+            } else {
+                return -1
+            }
+        })
+        // Stringify and set "highScores" key in localStorage to highScores array
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+};
+
+startQuizBtn.addEventListener("click", codeQuiz);
+startQuizBtn.addEventListener("click", quizTimer);
+
+userNameForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
   
-  //setTime();
-function resetState() {
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild
-        (answerButtonsElement.firstChild)
-    }
-}
-function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
-    }
-}
+    let userNameText = userNameInput.value.trim().toUpperCase();
+    let userNames = [];
 
+    if (userNameText === "") {
+        return;
+    };
+  
+    userNames.push(userNameText);
+    // console.log(userNames);
+    userNameInput.value = "";
+
+    generateNewHighScore();
+
+    function generateNewHighScore() {
+
+       
+        userNameList.textContent = "";
         
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
-    if (correct) {
-    element.classList.add ('correct')
-    } else {
-    element.classList.add('wrong')
-    }
-    }
-function clearStatusClass(element, ) {
-    element.classList.remove('corret')
-    element.classList.remove('wrong')
-}
 
-const questions = [
-    {
-    question: "What does HTML stand for?",
-    answers: [
-    { text: 'hyperlink markup link', correct: false },
-    { text: 'hypertext markup language', correct: true },
-    { text: 'hyper markup text', correct: false },
-    { text: 'hotmail language', correct: false }
-    ]
-}, 
-{
-question: "What is Web api?",
-answers: [
-{ text: 'application programming interface', correct: true },
-{ text: 'application programming interlace', correct: false },
-{ text: 'application population interface', correct: false },
-{ text: 'application interfasce program', correct: false}
-]
-},
-{
-question: "What is Bootstrap?",
-answers: [
-{ text: 'a feature in GitHub', correct: false },
-{ text: 'used to tie your hard driuve to CPU', correct: false },
-{ text: 'free tool to create repo', correct:  false },
-{ text: 'free tool to create websites and web apps', correct: true }
-]
-},
-{
-question: "What does CSS stand for?",
-answers: [
-{ text: 'cascading sheet style', correct: false },
-{ text: 'cascading style sheet', correct: true },
-{ text: 'computer style sheet', correct: false },
-{ text: 'computer sheet style', correct: false}
-]
-},
-{
-question: "What is JavaScript?",
-answers: [
-{ text: 'used to purchase email account', correct: false },
-{ text: 'used for backing up device', correct: false },
-{ text: 'used to cretae dynamic websites', correct: true },
-{ text: 'CPU mainframe', correct: false}
-]
-}
-] 
+        let lastUser = userNames[(userNames.length - 1)];
+        let userScore = parseInt(finalScore.textContent);
+        userNameCountSpan.textContent = userNames.length;
+
+        let newHighscore = { user: lastUser, score: userScore }
+        highScores.push(newHighscore);
+
+        storeHighscores();
+        window.location.href = "./highscores.html";
+    };
+});
