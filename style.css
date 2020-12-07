@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(201, 199, 199);
+    background-color: rgb(55, 127, 185);
 }
 
 header {
@@ -12,23 +12,25 @@ header {
 }
 
 a {
-    color: rgb(100, 98, 98);
+    color: rgb(56, 55, 55);
     font-family: sans-serif;
     font-size: large;
+    font-weight: bold;
     width: 50%;
     text-decoration: none;
     float: left;
-    padding: 10px;
+    padding: 20px;
 }
 
 #timer {
-    color: black;
+    color: darkred;
     font-family: sans-serif;
     font-size: large;
+    font-weight: bold;
     text-align: right;
     width: 50%;
     float: right;
-    padding: 10px;
+    padding: 20px;
 }
 
 main {
@@ -42,7 +44,7 @@ main {
 .container {
     width: 800px;
     max-width: 80%;
-    background-color: white;
+    background-color: rgb(182, 179, 179);
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
@@ -54,6 +56,16 @@ main {
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
+    
+}
+
+.btn {
+    border: 1px solid rgb(7, 83, 52) 100%, 30%;
+    background-color: rgb(55, 144, 228);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: rgb(189, 69, 135);
+
 }
 
 #quizId {
