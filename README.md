@@ -21,7 +21,7 @@ Test your kwowledge in coding!
 
 ## Description
 
->The Password Generator app is a timed quiz about computer programming laguagages. Time will be deducted for wrong answers. You will need to enter your initials at the end to see your score and where you rank.
+>The Code Quiz app is a timed quiz about computer programming laguagages. Time will be deducted for wrong answers. You will need to enter your initials at the end to see your score and where you rank.
 
 ## Usage
 ```
@@ -35,7 +35,15 @@ SO THAT I can gauge my progress compared to my peers
 
 ## Screenshots
 
+<img src="https://user-images.githubusercontent.com/70309736/101308238-05ecc500-380f-11eb-97a4-b14bdbf3b43e.png">
 
+<img src="https://user-images.githubusercontent.com/70309736/101308241-071df200-380f-11eb-8f2f-f22767196664.png">
+
+<img src="https://user-images.githubusercontent.com/70309736/101308245-084f1f00-380f-11eb-84ad-51d95bf8ec59.png">
+
+<img src="https://user-images.githubusercontent.com/70309736/101308248-0a18e280-380f-11eb-9192-ad0942f58ef9.png">
+
+<img src="https://user-images.githubusercontent.com/70309736/101308249-0be2a600-380f-11eb-9a6e-71593198a014.png">
 
 ## Contributors
 

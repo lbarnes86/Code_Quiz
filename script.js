@@ -22,23 +22,23 @@ let answer4 = document.querySelector("#answer4");
 
 let questionArray = [{
     question: "Web api is:",
-    answers: ["1. JavaScript", "2. application programming interface", "3. application interface program", "4. application programming interlace"],
+    answers: ["JavaScript", "application programming interface", "application interface program", "application programming interlace"],
     correctAnswerIndex: "1"
 }, {
     question: "What is Bootstrap?",
-    answers: ["1. free tool to create websites and web apps", "2. a feature in GitHub", "3. Cascading Style Sheet", "4. free tool to create repo"],
+    answers: ["free tool to create websites and web apps", "a feature in GitHub", "Cascading Style Sheet", "free tool to create repo"],
     correctAnswerIndex: "0"
 }, {
     question: "What does CSS stand for?",
-    answers: ["1. computer style sheet", "2. cascading sheet style", "3. computer sheet style", "4. cascading style sheet"],
+    answers: ["computer style sheet", "cascading sheet style", "computer sheet style", "cascading style sheet"],
     correctAnswerIndex: "3"
 }, {
     question: "What is JavaScript?",
-    answers: ["1. used to cretae dynamic websites", "2. CPU mainframe", "3. used for backing up device", "4. used to purchase email account"],
+    answers: ["used to cretae dynamic websites", "CPU mainframe", "used for backing up device", "used to purchase email account"],
     correctAnswerIndex: "0"
 }, {
     question: "What is HTML?",
-    answers: ["1. hyperlink markup link", "2. hotmail language", "3. hypertext markup language", "4. hyperlink markup link"],
+    answers: ["hyperlink markup link", "hotmail language", "hypertext markup language", "hyperlink markup link"],
     correctAnswerIndex: "2"
 }]
 

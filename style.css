@@ -51,20 +51,22 @@ main {
 }
 
 #btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
+  
     justify-content: center;
+    
     gap: 10px;
-    margin: 20px 0;
+    margin: 10px;
     
 }
 
 .btn {
-    border: 1px solid rgb(7, 83, 52) 100%, 30%;
-    background-color: rgb(55, 144, 228);
+    border: 1px solid red 100%, 30%;
+    background-color: lightblue;
+    justify-content: center;
+   
     border-radius: 5px;
     padding: 5px 10px;
-    color: rgb(189, 69, 135);
+    color: gray;
 
 }
 
