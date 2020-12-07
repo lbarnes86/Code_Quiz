@@ -21,25 +21,25 @@ let answer3 = document.querySelector("#answer3");
 let answer4 = document.querySelector("#answer4");
 
 let questionArray = [{
-    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-    answers: ["1. JavaScript", "2. Terminal / Bash", "3. for loops", "4. console log"],
-    correctAnswerIndex: "3"
+    question: "Web api is:",
+    answers: ["1. JavaScript", "2. application programming interface", "3. application interface program", "4. application programming interlace"],
+    correctAnswerIndex: "1"
 }, {
-    question: "The condition in an if / esle statement is enclosed within _____.",
-    answers: ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
-    correctAnswerIndex: "2"
-}, {
-    question: "Arrays in JavaScript can be used to store _____",
-    answers: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
-    correctAnswerIndex: "3"
-}, {
-    question: "String values must be enclosed within _____ when being assigned to variables.",
-    answers: ["1. quotes", "2. curly brackets", "3. commas", "4. parentheses"],
+    question: "What is Bootstrap?",
+    answers: ["1. free tool to create websites and web apps", "2. a feature in GitHub", "3. Cascading Style Sheet", "4. free tool to create repo"],
     correctAnswerIndex: "0"
 }, {
-    question: "Commonly used data types DO NOT include:",
-    answers: ["1. strings", "2. alerts", "3. booleans", "4. numbers"],
-    correctAnswerIndex: "1"
+    question: "What does CSS stand for?",
+    answers: ["1. computer style sheet", "2. cascading sheet style", "3. computer sheet style", "4. cascading style sheet"],
+    correctAnswerIndex: "3"
+}, {
+    question: "What is JavaScript?",
+    answers: ["1. used to cretae dynamic websites", "2. CPU mainframe", "3. used for backing up device", "4. used to purchase email account"],
+    correctAnswerIndex: "0"
+}, {
+    question: "What is HTML?",
+    answers: ["1. hyperlink markup link", "2. hotmail language", "3. hypertext markup language", "4. hyperlink markup link"],
+    correctAnswerIndex: "2"
 }]
 
 
