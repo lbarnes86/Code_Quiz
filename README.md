@@ -8,7 +8,7 @@ Test your kwowledge in coding!
 
 - [Project Repository](https://github.com/lbarnes86/codeQuiz)
 
-- [Project Deployment](https://lbarnes86.github.io/codeQuiz/)
+- [Project Deployment](https://lbarnes86.github.io/Code_Quiz/)
 
 ## Table of Contents
 
