@@ -19,7 +19,7 @@ let answer1 = document.querySelector("#answer1");
 let answer2 = document.querySelector("#answer2");
 let answer3 = document.querySelector("#answer3");
 let answer4 = document.querySelector("#answer4");
-
+// Create the questions array.
 let questionArray = [{
     question: "Web api is:",
     answers: ["JavaScript", "application programming interface", "application interface program", "application programming interlace"],

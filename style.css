@@ -76,6 +76,7 @@ main {
 
 #endQuiz {
     display: none;
+    
 }
 
 #highScoresList {
@@ -93,10 +94,12 @@ main {
 
 #correct {
     display: none;
+    color: green;
 }
 
 #wrong {
     display: none;
+    color: red;
 }
 
 #initial-count {
