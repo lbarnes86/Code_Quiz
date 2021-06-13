@@ -25,9 +25,9 @@ let questionArray = [{
     answers: ["JavaScript", "application programming interface", "application interface program", "application programming interlace"],
     correctAnswerIndex: "1"
 }, {
-    question: "What is Bootstrap?",
-    answers: ["free tool to create websites and web apps", "a feature in GitHub", "Cascading Style Sheet", "free tool to create repo"],
-    correctAnswerIndex: "0"
+    question: "Arrays can be used to store ",
+    answers: ["booleans", "numbers", "strings", "all of the above"],
+    correctAnswerIndex: "3"
 }, {
     question: "What does CSS stand for?",
     answers: ["computer style sheet", "cascading sheet style", "computer sheet style", "cascading style sheet"],
