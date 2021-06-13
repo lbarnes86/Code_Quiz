@@ -47,7 +47,10 @@ SO THAT I can gauge my progress compared to my peers
 
 ## Contributors
 
-- Lloyd F Barnes 
+[![GitHub license](https://img.shields.io/badge/Made%20by-Lloyd%20Barnes-ab8c9b?style=flat&logo=github)](https://github.com/lbarnes86)
 
 ## License
-© Lloyd F Barnes, 2020
+
+![License](https://img.shields.io/badge/license-ISC-green")
+
+Copyright© 2021 
