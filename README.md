@@ -37,10 +37,6 @@ This code quiz has a highscores page thats saves storage locally.
 
 <img src="https://user-images.githubusercontent.com/70309736/101308241-071df200-380f-11eb-8f2f-f22767196664.png">
 
-<img src="https://user-images.githubusercontent.com/70309736/101308245-084f1f00-380f-11eb-84ad-51d95bf8ec59.png">
-
-<img src="https://user-images.githubusercontent.com/70309736/101308248-0a18e280-380f-11eb-9192-ad0942f58ef9.png">
-
 <img src="https://user-images.githubusercontent.com/70309736/101308249-0be2a600-380f-11eb-9a6e-71593198a014.png">
 
 ## Contributors
