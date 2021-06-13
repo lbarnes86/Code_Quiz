@@ -103,7 +103,7 @@ $(".answer").click(function() {
     }
     if (i === 4) {
         quizId.setAttribute("style", "display: none;");
-        endQuiz.setAttribute("style", "display: block;");
+        endQuiz.setAttribute("style", "display: inline-block;");
     }
     if (i !== 4) {
         return i = i + 1, codeQuiz();
@@ -124,12 +124,12 @@ function quizTimer() {
         if (codeTimer === -1) {
 
             quizId.setAttribute("style", "display: none;");
-            endQuiz.setAttribute("style", "display: block;");
+            endQuiz.setAttribute("style", "display: inline-block;");
         }
 
         if (listOfAnswers.length === 5) {
             quizId.setAttribute("style", "display: none;");
-            endQuiz.setAttribute("style", "display: block;");
+            endQuiz.setAttribute("style", "display: inline-block;");
             clearInterval(timer)
             finalScore.textContent = codeTimer;
 
