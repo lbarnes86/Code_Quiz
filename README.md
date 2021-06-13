@@ -25,9 +25,7 @@ Test your kwowledge in coding!
 
 ## Usage
 ```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+This code quiz has a highscores page thats saves storage locally. 
 ```
 
 ## Dependencies
